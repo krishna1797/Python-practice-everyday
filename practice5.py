@@ -1,10 +1,10 @@
 #this is a number guessing game using loop/break if elif and else it will also print your number or attempt
 
-
+import random
+no=random.randint(1,100)
 
 print("Welcome to number game🥳🥳\nHere U have to guess a number between 1 to 100")
 print("And u have to keep guessig until U guess the right number")
-no=18
 count=0
 while True:
     A=int(input("\n Enter Your Number:"))
