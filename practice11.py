@@ -11,26 +11,42 @@ while True:
     print("3. Money withdrawal")
     print("4. EXIT")
     
-    a=int(input("\nEnter a number according to your work :"))
+    try:
+        a = int(input("\nEnter a number according to your work: "))
+    except ValueError:
+        print("Please enter a number only.")
+        continue
     if(a==1):
         print("\nYour current balance is : ₹",balance)
         
     elif(a==2):
         b=int(input("\nEnter the amount u want to deposit :"))
-        print(f"Amount of ₹{b} have been deposited")
-        balance+=b
-        print(f"\nTotal balance in your account is :₹{balance}")
-        
+        if b <= 0:
+            print("Please enter a valid amount.")
+            
+        else:
+            
+            print(f"Amount of ₹{b} have been deposited")
+            balance+=b
+            print(f"\nTotal balance in your account is :₹{balance}")
+            
         
     elif(a==3):
         c=int(input("\nEnter amount u want to withdraw :"))
-        if ((balance-c)>=0):
-            print(f"Amount of{c}have been deducted from your account")
-            balance-=c
-            print(f"\nTota balance in your account is :₹{balance}")
+        
+        if c<=0:
+            print("Please enter a valid amount.")
+            
             
         else:
-            print(f"Sorry the transection was cancelled because u have ₹{balance}")
+            
+            if ((balance-c)>=0):
+                print(f"Amount of{c}have been deducted from your account")
+                balance-=c
+                print(f"\nTota balance in your account is :₹{balance}")
+                
+            else:
+                print(f"Sorry the transection was cancelled because u have ₹{balance}")
             
     elif(a==4):
         print("\nthank u for using your transection system".title())
@@ -39,23 +55,6 @@ while True:
     else:
         
         print("\nenter a correct number between 1 to 4 according to your work ".upper())
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
         
         
         
