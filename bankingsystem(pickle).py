@@ -2,7 +2,7 @@ import pickle
 
 
 def save(lala):
-    with open("yayafile", "wb") as f:
+    with open("yayafile", "ab") as f:
         pickle.dump(lala, f)
 
 def read():
